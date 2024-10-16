@@ -120,7 +120,7 @@
             q2: ["cupida ōrnāmenta Sabīnōrum habendī", "hostēs Rōmānōrum adiuvābat"],
             q3: ["armillās"],
             q4: ["auxiliō Tarpēiae Sabīnī Rōmānōs vīcērunt", "urbe captā, Sabīnī multa aedificia ignī dedērunt ac rēs pretiōsās abstulērunt"],
-            q5: ["quamquam Tarpēia auxilium iīs tulit, puellam improbam sevērē pūnīvērunt"]
+            q5: ["quamquam Tarpēia auxilium iīs tulit, puellam improbam sevērē pūnīvērunt"],
             q6: ["ita vērō, dedērunt enim ea quae in bracchiīs sinistrīs gerēbant"]
         };
 
@@ -154,12 +154,12 @@
                 }
             }
 
-            resultText += `<br>Ergo ${correctCount} ex 5 recta sunt.`;
+            resultText += `<br>Ergo ${correctCount} ex 6 recta sunt.`;
             updateResultText(resultText);
         });
 
         document.getElementById("showAnswers").addEventListener("click", function() {
-            for (let i = 1; i <= 5; i++) {
+            for (let i = 1; i <= 6; i++) {
                 const checkboxes = document.querySelectorAll(`input[name="q${i}"]`);
                 const correct = correctAnswers[`q${i}`];
 
