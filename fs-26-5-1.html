@@ -90,15 +90,22 @@
 </label><br>
 
         <!-- Вопрос 5 -->
-        <p>5. Quid ēgit Iuppiter in fābulae fīne?</p>
-        <input type="checkbox" id="q5a" name="q5" value="fōrmā dīvīnā redditā, Eurōpam uxōrem dūxit">
-        <label for="q5a">fōrmā dīvīnā redditā, Eurōpam uxōrem dūxit </label><br>
-        <input type="checkbox" id="q5b" name="q5" value="fōrmam bovis Eurōpae dedit">
-        <label for="q5b">fōrmam bovis Eurōpae dedit</label><br>
-        <input type="checkbox" id="q5c" name="q5" value="terram, ad quam simul cum puellā pervēnerat, Eurōpam appellāvit">
-        <label for="q5c">terram, ad quam simul cum puellā pervēnerat, Eurōpam appellāvit</label><br>
-        <input type="checkbox" id="q5d" name="q5" value="postquam ad terram novam pervēnērunt, Eurōpam solam relīquit">
-        <label for="q5d">Vpostquam ad terram novam pervēnērunt, Eurōpam solam relīquit</label><br>
+        <p>5. Urbe captā, quid agunt Sabīnī?</p>
+        <input type="checkbox" id="q5a" name="q5" value="quamquam Tarpēia auxilium iīs tulit, puellam improbam sevērē pūnīvērunt">
+        <label for="q5a">quamquam Tarpēia auxilium iīs tulit, puellam improbam sevērē pūnīvērunt</label><br>
+        <input type="checkbox" id="q5b" name="q5" value="urbem captandō dēlectātī, Tarpēiae praemia pretiōsam dedērunt">
+        <label for="q5b">urbem captandō dēlectātī, Tarpēiae praemia pretiōsam dedērunt</label><br>
+        <input type="checkbox" id="q5c" name="q5" value="Sabīnī Rōmam ingredientēs Tarpēiam forte interfēcerant; posthāc eius morte maerēbant">
+        <label for="q5c">Sabīnī Rōmam ingredientēs Tarpēiam forte interfēcerant; posthāc eius morte maerēbant
+</label><br>
+
+<!-- Вопрос 6 -->
+        <p>6. Urbe captā, quid agunt Sabīnī?</p>
+        <input type="checkbox" id="q6a" name="q6" value="ita vērō, dedērunt enim ea quae in bracchiīs sinistrīs gerēbant">
+        <label for="q6a">ita vērō, dedērunt enim ea quae in bracchiīs sinistrīs gerēbant</label><br>
+        <input type="checkbox" id="q6b" name="q6" value="minimē vērō, nam scūtīs eam oppressērunt neque armillās prōmissās dedērunt">
+        <label for="q6b">minimē vērō, nam scūtīs eam oppressērunt neque armillās prōmissās dedērunt</label><br>
+</label><br>
     </form>
     <p id="result"></p>
 
@@ -109,11 +116,12 @@
 
     <script>
         const correctAnswers = {
-            q1: ["pulchra virgō Graeca", "Iovis uxor", "terra ad quam puella Graeca eiusdem nōminis pervēnit"],
-            q2: ["in taurī tergum ascendēns cōnsīdit", "ad taurum accēdēns manū suā tetigit", "herbās ex campō carptās taurō dēdit"],
-            q3: ["ad maris ōram currere coepit atque in magnōs maris flūctūs intrāvit"],
-            q4: ["amōre est captus"],
-            q5: ["fōrmā dīvīnā redditā, Eurōpam uxōrem dūxit", "terram, ad quam simul cum puellā pervēnerat, Eurōpam appellāvit"]
+            q1: ["in Ītaliā habitantēs", "mīlitēs Rōmam oppugnantēs", "Rōmānōrum hostēs"],
+            q2: ["cupida ōrnāmenta Sabīnōrum habendī", "hostēs Rōmānōrum adiuvābat"],
+            q3: ["armillās"],
+            q4: ["auxiliō Tarpēiae Sabīnī Rōmānōs vīcērunt", "urbe captā, Sabīnī multa aedificia ignī dedērunt ac rēs pretiōsās abstulērunt"],
+            q5: ["quamquam Tarpēia auxilium iīs tulit, puellam improbam sevērē pūnīvērunt"]
+            q6: ["ita vērō, dedērunt enim ea quae in bracchiīs sinistrīs gerēbant"]
         };
 
         function updateResultText(text) {
@@ -131,7 +139,7 @@
             let resultText = "";
             let correctCount = 0;
 
-            for (let i = 1; i <= 5; i++) {
+            for (let i = 1; i <= 6; i++) {
                 const selected = document.querySelectorAll(`input[name="q${i}"]:checked`);
                 const selectedValues = Array.from(selected).map(checkbox => checkbox.value);
                 const correct = correctAnswers[`q${i}`];
